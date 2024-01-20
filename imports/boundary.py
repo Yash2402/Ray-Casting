@@ -1,5 +1,5 @@
 import pygame
-from vector2d import Vector2D
+from imports.vector2d import Vector2D
 
 
 class Boundary():   

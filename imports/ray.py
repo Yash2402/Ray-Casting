@@ -1,7 +1,7 @@
 import pygame
 import math
-from boundary import Boundary
-from vector2d import Vector2D
+from imports.boundary import Boundary
+from imports.vector2d import Vector2D
 
 class Ray():
     def __init__(self, x, y, angle, color):

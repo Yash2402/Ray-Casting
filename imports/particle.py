@@ -1,7 +1,7 @@
 import pygame
 import math
-from vector2d import Vector2D
-from ray import Ray
+from imports.vector2d import Vector2D
+from imports.ray import Ray
 
 class Particle():
     def __init__(self, x, y, color, heading):

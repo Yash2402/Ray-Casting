@@ -14,7 +14,7 @@ W2 = 1200
 W1 = 600
 H1 = 600
 
-screen = pygame.display.set_mode((W2, H1))
+screen = pygame.display.set_mode((W2, H1), pygame.RESIZABLE)
 
 walls = []
 scene = []

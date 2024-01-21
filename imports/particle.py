@@ -4,7 +4,7 @@ from imports.vector2d import Vector2D
 from imports.ray import Ray
 
 class Particle():
-    def __init__(self, x, y, color, heading):
+    def __init__(self, x, y, color:tuple, heading):
         self.x = x
         self.y = y
         self.pos = Vector2D(self.x, self.y)

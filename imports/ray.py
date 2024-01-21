@@ -19,7 +19,7 @@ class Ray():
     def setAngle(self, angle):
         self.angle += angle
 
-    def cast(self, wall:Boundary):
+    def cast(self, wall:Boundary)->Vector2D:
         x1 = wall.a.x
         y1 = wall.a.y
         x2 = wall.b.x
@@ -32,7 +32,7 @@ class Ray():
         
         den = (x1 - x2)*(y3 - y4) - (y1 - y2)*(x3 - x4)
         if den == 0:
-            return
+            return None
         else:
             t = ((x1 - x3) * (y3 - y4) - (y1 - y3) * (x3 - x4))/den
             u = -((x1 - x2) * (y1 - y3) - (y1 - y2) * (x1 - x3))/den

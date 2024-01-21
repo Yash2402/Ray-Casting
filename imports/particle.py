@@ -32,6 +32,8 @@ class Particle():
                 pt = ray.cast(wall)
                 if pt:
                     d = (self.pos - pt).mag()
+                    ang = ray.angle - self.heading
+                    d *= math.cos(math.radians(ang))
                     if d < record:
                         record = d
                         closest = pt

@@ -19,6 +19,12 @@ This repository provides a simple implementation of the Ray Casting algorithm, a
 
 Clone the repository and navigate to the project:
 
+```bash 
+git clone https://github.com/Yash2402/Ray-Casting.git
+cd Ray-Casting
+
+Install dependencies:
+
 ```bash
-git clone https://github.com/your-username/ray-casting.git
-cd ray-casting
+  pip3 install -r requirement.txt
+

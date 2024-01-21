@@ -1,7 +1,7 @@
 import pygame
-import random
+import math
 from imports.boundary import Boundary
-from imports.particle import Particle
+from imports.particle import Particle, polygon
 
 
 def lerp(A, B, t):
@@ -22,18 +22,16 @@ heading = -70
 cellW = 20
 cellH = 20
 
-# for i in range(5):
-#     x1 = random.randint(0, W1)
-#     x2 = random.randint(0, W1)
-#     y1 = random.randint(0, H1)
-#     y2 = random.randint(0, H1)
-#     walls.append(Boundary(x1, y1, x2, y2, 5))
 walltop = Boundary(0, 0, W1, 0, 5)
 wallright = Boundary(W1, 0, W1, H1, 5)
 wallleft = Boundary(0, 0, 0, H1, 5)
 wallbottom = Boundary(0, H1, W1, H1, 5)
-walls.extend([Boundary(50, 50, (W1-100)/2, 50, 5), Boundary((W1-100)/2, 50, (W1-100)/2, (H1-100)/2, 5), Boundary(50, 50, 50, (H1-100)/2, 5), Boundary(50, (H1-100)/2, (W1-100)/2, (H1-100)/2, 5)])
-walls.extend([walltop, wallright, wallleft, wallbottom])
+
+shapes = []
+shapes.extend([polygon(4, math.sqrt(2)*(W1/2), rotation=math.pi/4, translation=(W1/2, H1/2)), polygon(10, (W1-100)/4, translation=(50+(W1-100)/4, 50+(H1-100)/4)), polygon(4, 50, translation=(3*W1/4, 60)), polygon(5, 50, translation=(3*W1/4, 3*H1/4)), polygon(6, 50, translation=(1*W1/4, 3*H1/4))])
+for shape in shapes:
+    for i in range(len(shape)):
+        walls.append(Boundary(shape[i][0], shape[i][1], shape[(i + 1)%len(shape)][0], shape[(i + 1)%len(shape)][1], 5))
 
 
 run = True

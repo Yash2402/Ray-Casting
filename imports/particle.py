@@ -42,3 +42,15 @@ class Particle():
             if closest:
                     pygame.draw.aaline(screen, self.color, self.pos.coordinates, closest.coordinates)
         return scene
+
+
+def polygon(sides, radius=1, rotation=0, translation=None):
+    one_segment = math.pi * 2 / sides
+    vertices = [
+        (math.sin(one_segment * i + rotation) * radius,
+        math.cos(one_segment * i + rotation) * radius)
+        for i in range(sides)]
+    if translation:
+        vertices = [[sum(pair) for pair in zip(point, translation)]
+                for point in vertices]
+    return vertices

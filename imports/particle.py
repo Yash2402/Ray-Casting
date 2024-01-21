@@ -11,7 +11,7 @@ class Particle():
         self.rays = []
         self.color = color
         self.heading = heading
-        for a in range(self.heading, self.heading + 50,  1):
+        for a in range(self.heading - 25, self.heading + 25,  1):
             self.rays.append(Ray(self.pos.x, self.pos.y, math.radians(a), self.color))
         
     def show(self, screen):

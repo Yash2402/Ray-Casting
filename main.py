@@ -59,7 +59,7 @@ while run:
         w = (W1/len(scene))
         for d in scene:
             b = lerp(255, 0, ilerp(0, 1.414*W1, d))
-            h = lerp(H1/1.5, 0, ilerp(0, 1.414*W1, d))
+            h = lerp(H1/2, 0, ilerp(0, 1.414*W1, d))
             pygame.draw.rect(screen, (b%255, b%255, b%255), (W1 + i*w, H1/2 - h, w, 2*h))
             i += 1
         particle.show(screen)

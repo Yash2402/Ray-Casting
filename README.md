@@ -22,9 +22,16 @@ Clone the repository and navigate to the project:
 ```bash 
 git clone https://github.com/Yash2402/Ray-Casting.git
 cd Ray-Casting
-
+```
 Install dependencies:
 
 ```bash
   pip3 install -r requirement.txt
+```
+## Usage
 
+Learn how to use the Ray Casting algorithm in your project. Configure and run the code using:
+
+- To move the particle use mouse
+- To Rotate the FOV Clockwise press ```d```
+- To Rotate the FOV Counter-Clockwise press ```s```

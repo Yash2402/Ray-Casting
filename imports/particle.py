@@ -11,12 +11,15 @@ class Particle():
         self.rays = []
         self.color = color
         self.heading = heading
-        for a in range(self.heading - 25, self.heading + 25,  1):
+        self.FOV = 50
+        a = self.heading -  self.FOV/2
+        while (int(a) != int(self.heading +  self.FOV/2)):
             self.rays.append(Ray(self.pos.x, self.pos.y, math.radians(a), self.color))
+            a += 1
         
     def show(self, screen):
-        pygame.draw.circle(screen, self.color, self.pos.coordinates, 4)
- 
+        pygame.draw.circle(screen, self.color, self.pos.coordinates, 10)
+
     def rotate(self, a):
         self.heading += a
 

@@ -28,7 +28,7 @@ wallleft = Boundary(0, 0, 0, H1, 5)
 wallbottom = Boundary(0, H1, W1, H1, 5)
 
 shapes = []
-shapes.extend([polygon(4, math.sqrt(2)*(W1/2), rotation=math.pi/4, translation=(W1/2, H1/2)), polygon(10, (W1-100)/4, translation=(50+(W1-100)/4, 50+(H1-100)/4)), polygon(4, 50, translation=(3*W1/4, 60)), polygon(5, 50, translation=(3*W1/4, 3*H1/4)), polygon(6, 50, translation=(1*W1/4, 3*H1/4))])
+shapes.extend([polygon(4, math.sqrt(2)*(W1/2), rotation=math.pi/4, translation=(W1/2, H1/2)), polygon(10, 50, translation=(50+(W1-100)/4, 50+(H1-100)/4)), polygon(4, 50, translation=(3*W1/4, 60)), polygon(5, 50, translation=(3*W1/4, 3*H1/4)), polygon(6, 50, translation=(1*W1/4, 3*H1/4))])
 for shape in shapes:
     for i in range(len(shape)):
         walls.append(Boundary(shape[i][0], shape[i][1], shape[(i + 1)%len(shape)][0], shape[(i + 1)%len(shape)][1], 5))

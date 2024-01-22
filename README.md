@@ -36,4 +36,4 @@ Learn how to use the Ray Casting algorithm in your project. Configure and run th
 
 - To move the particle use mouse
 - To Rotate the FOV Clockwise press ```d```
-- To Rotate the FOV Counter-Clockwise press ```s```
+- To Rotate the FOV Counter-Clockwise press ```a```

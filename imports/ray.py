@@ -11,7 +11,7 @@ class Ray():
         self.color = color
 
     def show(self, screen)->None:
-        pygame.draw.aaline(screen, self.color, self.pos.coordinates, ((self.dir.mult(20)).add(self.pos)).coordinates)
+        pygame.draw.aaline(screen, self.color, self.pos.coordinates, (self.dir + self.pos).coordinates)
 
     def setDir(self, x, y)->None:
         self.dir = (Vector2D(x, y) - self.pos).unit()
@@ -29,7 +29,8 @@ class Ray():
         y3 = self.pos.y
         x4 = self.pos.x + self.dir.x
         y4 = self.pos.y + self.dir.y
-        self.color = wall.color
+
+        # self.color = wall.color
 
         den = (x1 - x2)*(y3 - y4) - (y1 - y2)*(x3 - x4)
         if den == 0:

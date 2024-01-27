@@ -20,6 +20,9 @@ class Particle():
     def show(self, screen):
         pygame.draw.circle(screen, self.color, self.pos.coordinates, 10)
 
+    def incFOV(self, deltaFOV):
+        self.FOV += deltaFOV
+
     def rotate(self, a):
         self.heading += a
 

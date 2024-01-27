@@ -16,7 +16,7 @@ class Particle():
         while (int(a) != int(self.heading +  self.FOV/2)):
             self.rays.append(Ray(self.pos.x, self.pos.y, math.radians(a), self.color))
             a += 1
-        
+
     def show(self, screen):
         pygame.draw.circle(screen, self.color, self.pos.coordinates, 10)
 
@@ -47,7 +47,7 @@ class Particle():
         return scene
 
 
-def polygon(sides, radius=1, rotation=0, translation=None):
+def polygon(sides, radius=1.0, rotation=0.0, translation=None):
     one_segment = math.pi * 2 / sides
     vertices = [
         (math.sin(one_segment * i + rotation) * radius,

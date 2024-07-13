@@ -26,7 +26,7 @@ heading = 0
 cellW = 20
 cellH = 20
 FOV = 50
- 
+
 boundaryColor = (245, 243, 187)
 walltop = Boundary(0, 0, W1, 0, boundaryColor, 5)
 wallright = Boundary(W1, 0, W1, H1, boundaryColor, 5)
@@ -51,7 +51,7 @@ for shape in shapes:
                 shape[i][1],
                 shape[(i + 1) % len(shape)][0],
                 shape[(i + 1) % len(shape)][1],
-                [(223, 41, 53), (0, 124, 200), (180, 140, 20)][i%3],
+                [(223, 41, 53), (0, 124, 200), (180, 140, 20)][i % 3],
                 5,
             )
         )
@@ -66,7 +66,6 @@ while run:
         if event.type == pygame.QUIT:
             run = False
 
-    
     pygame.draw.rect(screen, (0, 191, 255), (W1, 0, W1, H1//2))
     pygame.draw.rect(screen, (0, 191, 255), (W1, 0, W1, H1), 1)
     mouse = pygame.mouse.get_pos()
@@ -88,13 +87,15 @@ while run:
         width = round(W1 / len(scene))
 
         for i in range(len(scene)):
-            d = scene[i]; color = colors[i]
+            d = scene[i]
+            color = colors[i]
             brightness = lerp(1, 0, ilerp(0, 1.414 * W1, d))
             height = lerp(H1 / 2.4, 0, ilerp(0, 1.414 * W1, d))
             pygame.draw.rect(screen, (255, 255, 255), (W1 + W2, 0, W2, H1))
             pygame.draw.rect(
                 screen,
-                (brightness*color[0], brightness*color[1], brightness*color[2]),
+                (brightness*color[0], brightness *
+                 color[1], brightness*color[2]),
                 (W1 + i * width, H1 / 2 - height, width, 2 * height),
             )
             i += 1
@@ -104,4 +105,3 @@ while run:
         wall.show(screen)
 
     pygame.display.update()
-

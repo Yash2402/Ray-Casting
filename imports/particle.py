@@ -14,8 +14,8 @@ class Particle:
         self.pos = Vector2D(self.x, self.y)
         self.color = color
         self.heading = heading
-        self.FOV = FOV 
-        
+        self.FOV = FOV
+
     def shootRays(self):
         self.a = self.heading - self.FOV / 2
         while int(self.a) != int(self.heading + self.FOV / 2):
@@ -58,7 +58,7 @@ class Particle:
                         record = d
                         closest = pt
                         ray.color = wall.color
-            colors.append(ray.color) 
+            colors.append(ray.color)
             scene.append(record)
             if closest:
                 pygame.draw.aaline(

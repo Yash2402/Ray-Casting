@@ -11,4 +11,5 @@ class Boundary:
         self.color = color
 
     def show(self, screen):
-        pygame.draw.aaline(screen, self.color, self.a.coordinates, self.b.coordinates, self.width)
+        pygame.draw.aaline(screen, self.color,
+                           self.a.coordinates, self.b.coordinates, self.width)

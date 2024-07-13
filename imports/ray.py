@@ -15,7 +15,8 @@ class Ray:
 
     def show(self, screen) -> None:
         pygame.draw.aaline(
-            screen, self.color, self.pos.coordinates, (self.dir + self.pos).coordinates
+            screen, self.color, self.pos.coordinates, (
+                self.dir + self.pos).coordinates
         )
 
     def setDir(self, x, y) -> None:
